@@ -1,5 +1,5 @@
 # FROM registry.access.redhat.com/ubi8-minimal
-FROM registry.access.redhat.com/ubi8/ubi-minimal
+FROM registry.access.redhat.com/ubi8/ubi
 
 # LABEL maintainer=""
 # ENV HOME='/runner/'
