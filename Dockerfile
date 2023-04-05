@@ -4,9 +4,15 @@ FROM registry.access.redhat.com/ubi8/ubi
 # LABEL maintainer=""
 # ENV HOME='/runner/'
 
-RUN microdnf update -y && rm -rf /var/cache/yum
-RUN microdnf install nss_wrapper gettext tar gzip -y \
-    && microdnf clean all
+# RUN microdnf update -y && rm -rf /var/cache/yum
+# RUN microdnf install nss_wrapper gettext tar gzip -y \
+#     && microdnf clean all
+
+RUN dnf update -y && rm -rf /var/cache/yum
+RUN dnf install nss_wrapper gettext tar gzip -y \
+    && dnf clean all
+
+
 
 RUN curl -L -s \
     https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
