@@ -5,7 +5,7 @@ FROM registry.access.redhat.com/ubi8/ubi-minimal
 # ENV HOME='/runner/'
 
 RUN microdnf update -y && rm -rf /var/cache/yum
-RUN microdnf install tmux nss_wrapper gettext tar gzip -y \
+RUN microdnf install nss_wrapper gettext tar gzip -y \
     && microdnf clean all
 
 RUN curl -L -s \
