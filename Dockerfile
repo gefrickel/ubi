@@ -10,7 +10,7 @@ FROM registry.access.redhat.com/ubi8/ubi-init
 #     && microdnf clean all
 
 RUN dnf update -y && rm -rf /var/cache/yum
-RUN dnf install nss_wrapper gettext tar gzip unzip -y \
+RUN dnf install nss_wrapper gettext tar gzip unzip tmux jq -y \
     && dnf clean all
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
