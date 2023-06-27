@@ -13,7 +13,9 @@ RUN dnf update -y && rm -rf /var/cache/yum
 RUN dnf install nss_wrapper gettext tar gzip unzip -y \
     && dnf clean all
 
-
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
+    unzip awscliv2.zip ; \
+    sudo ./aws/install
 
 RUN curl -L -s \
     https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
