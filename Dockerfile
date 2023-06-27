@@ -15,6 +15,8 @@ RUN dnf install nss_wrapper gettext tar gzip unzip -y \
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
     unzip awscliv2.zip ; \
+    mkdir /.aws ; \
+    chmod 777 /.aws ; \
     ./aws/install
 
 RUN curl -L -s \
