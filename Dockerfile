@@ -10,6 +10,9 @@ FROM registry.access.redhat.com/ubi8/ubi-init
 #     && microdnf clean all
 
 RUN dnf update -y && rm -rf /var/cache/yum
+
+RUN dnf install buildah -y
+
 RUN dnf install nss_wrapper gettext tar gzip unzip jq -y \
     && dnf clean all
 
